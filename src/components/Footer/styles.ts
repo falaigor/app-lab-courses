@@ -12,7 +12,7 @@ export const FooterWrapper = styled("div", {
   margin: "0 auto",
   display: "flex",
   alignItems: "center",
-  borderTop: "2px solid $gray700",
+  borderTop: "2px solid $gray500",
   justifyContent: "space-between",
 
   color: "$gray400",

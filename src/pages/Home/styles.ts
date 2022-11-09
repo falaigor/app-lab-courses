@@ -31,6 +31,7 @@ export const HeroInfo = styled("div", {
   flexDirection: "column",
   maxWidth: "40rem",
   gap: "1.5rem",
+  justifyContent: "center",
 
   p: {
     lineHeight: "1.5rem",
@@ -52,8 +53,6 @@ export const HeroInfo = styled("div", {
 });
 
 export const HeroForm = styled("form", {
-  display: "flex",
-  flexDirection: "column",
   background: "$gray800",
   borderRadius: "4px",
   border: "2px solid $gray700",
@@ -61,6 +60,15 @@ export const HeroForm = styled("form", {
   width: "100%",
   height: "100%",
   padding: "2rem",
-
+  display: "flex",
+  flexDirection: "column",
   justifyContent: "space-between",
+
+  h2: {
+    marginBottom: "1.5rem",
+  },
+
+  button: {
+    marginTop: "1.5rem",
+  },
 });

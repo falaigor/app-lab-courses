@@ -27,7 +27,7 @@ export function HomePage() {
           </HeroInfo>
 
           <HeroForm>
-            <h2>Inscreva-se gratuitamente</h2>
+            <h2>Faça seu login na plataforma</h2>
 
             <Input type="email" placeholder="Seu email" />
             <Input type="password" placeholder="Sua senha" />
