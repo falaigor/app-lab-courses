@@ -1,3 +1,4 @@
+import { Button } from "../../components/Button";
 import { Input } from "../../components/Input";
 import {
   HomePageContainer,
@@ -31,7 +32,7 @@ export function HomePage() {
             <Input type="email" placeholder="Seu email" />
             <Input type="password" placeholder="Sua senha" />
 
-            <button>Entrar</button>
+            <Button>Entrar</Button>
           </HeroForm>
         </HomeHero>
 

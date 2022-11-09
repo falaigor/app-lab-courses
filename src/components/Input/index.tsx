@@ -14,7 +14,7 @@ const InputStyle = styled("input", {
   padding: "1rem",
   color: "$gray100",
   borderRadius: "4px",
-  borderColor: "$gray900",
+  border: "2px solid $gray900",
   fontSize: "1rem",
   margin: "0.25rem 0",
 
