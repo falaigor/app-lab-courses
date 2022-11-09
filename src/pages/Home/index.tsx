@@ -14,8 +14,8 @@ export function HomePage() {
           <HeroInfo>
             <img src="/logo.svg" alt="logo" />
             <h1>
-              Construa uma <span>aplicação completa</span>, do zero, com{" "}
-              <span>React JS</span>
+              Construa uma <span>aplicação completa</span>, do zero, com
+              <span> React JS</span>
             </h1>
             <p>
               Em apenas uma semana você vai dominar na prática uma das

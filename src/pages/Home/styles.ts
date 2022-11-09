@@ -30,6 +30,7 @@ export const HeroInfo = styled("div", {
   display: "flex",
   flexDirection: "column",
   maxWidth: "40rem",
+  gap: "1.5rem",
 
   p: {
     lineHeight: "1.5rem",
