@@ -1,3 +1,4 @@
+import { Input } from "../../components/Input";
 import {
   HomePageContainer,
   HomeHero,
@@ -28,7 +29,7 @@ export function HomePage() {
             <h2>Inscreva-se gratuitamente</h2>
 
             <div>
-              <input type="text" />
+              <Input />
               <input type="text" />
             </div>
 
