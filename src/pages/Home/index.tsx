@@ -1,9 +1,43 @@
-import { HomePageContainer } from "./styles";
+import {
+  HomePageContainer,
+  HomeHero,
+  HomeWrapper,
+  HeroInfo,
+  HeroForm,
+} from "./styles";
 
 export function HomePage() {
   return (
     <HomePageContainer>
-      <div>Hello World Home page</div>
+      <HomeWrapper>
+        <HomeHero>
+          <HeroInfo>
+            <img src="/logo.svg" alt="logo" />
+            <h1>
+              Construa uma <span>aplicação completa</span>, do zero, com{" "}
+              <span>React JS</span>
+            </h1>
+            <p>
+              Em apenas uma semana você vai dominar na prática uma das
+              tecnologias mais utilizadas e com alta demanda para acessar as
+              melhores oportunidades do mercado.
+            </p>
+          </HeroInfo>
+
+          <HeroForm>
+            <h2>Inscreva-se gratuitamente</h2>
+
+            <div>
+              <input type="text" />
+              <input type="text" />
+            </div>
+
+            <button>Entrar</button>
+          </HeroForm>
+        </HomeHero>
+
+        <img src="/background.png" alt="" />
+      </HomeWrapper>
     </HomePageContainer>
   );
 }

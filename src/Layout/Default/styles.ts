@@ -6,7 +6,6 @@ export const LayoutContainer = styled("main", {
 });
 
 export const LayoutWrapper = styled("section", {
-  maxWidth: "1280px",
   width: "100%",
   margin: "0 auto",
 });
