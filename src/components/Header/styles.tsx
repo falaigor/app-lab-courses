@@ -11,5 +11,5 @@ export const HeaderContainer = styled("section", {
 });
 
 export const HeaderWrapper = styled("header", {
-  maxWidth: "1280px",
+  maxWidth: "80rem",
 });
