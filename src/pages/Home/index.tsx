@@ -1,12 +1,5 @@
-import { Button } from "../../components/Button";
-import { Input } from "../../components/Input";
-import {
-  HomePageContainer,
-  HomeHero,
-  HomeWrapper,
-  HeroInfo,
-  HeroForm,
-} from "./styles";
+import { Form } from "./components/Form";
+import { HomePageContainer, HomeHero, HomeWrapper, HeroInfo } from "./styles";
 
 export function HomePage() {
   return (
@@ -26,14 +19,7 @@ export function HomePage() {
             </p>
           </HeroInfo>
 
-          <HeroForm>
-            <h2>Faça seu login na plataforma</h2>
-
-            <Input type="email" placeholder="Seu email" />
-            <Input type="password" placeholder="Sua senha" />
-
-            <Button>Entrar</Button>
-          </HeroForm>
+          <Form />
         </HomeHero>
 
         <img src="/background.png" alt="" />
