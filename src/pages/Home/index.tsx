@@ -28,10 +28,8 @@ export function HomePage() {
           <HeroForm>
             <h2>Inscreva-se gratuitamente</h2>
 
-            <div>
-              <Input />
-              <input type="text" />
-            </div>
+            <Input type="email" placeholder="Seu email" />
+            <Input type="password" placeholder="Sua senha" />
 
             <button>Entrar</button>
           </HeroForm>
