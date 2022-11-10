@@ -1,9 +1,10 @@
 import { Routes, Route } from "react-router-dom";
-import { HomePage } from "@/pages/Home";
-import { CoursesPage } from "@/pages/Courses";
-
 import { DefaultLayout } from "@/Layout/Default";
 import { ClassroomLayout } from "@/Layout/Classroom";
+
+import { HomePage } from "@/pages/Home";
+import { CoursesPage } from "@/pages/Courses";
+import { ClassroomPage } from "@/pages/Classroom";
 
 export function AppRouter() {
   return (
@@ -14,7 +15,7 @@ export function AppRouter() {
       </Route>
 
       <Route path="/slug" element={<ClassroomLayout />}>
-        <Route path="" element={<HomePage />} />
+        <Route path="" element={<ClassroomPage />} />
       </Route>
     </Routes>
   );
