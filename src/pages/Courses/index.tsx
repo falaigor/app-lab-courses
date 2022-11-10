@@ -1,4 +1,4 @@
-import { CourseItemContainer } from "./components/CourseItem/styles";
+import { CourseItem } from "./components/CourseItem";
 import { CoursesContainer, CoursesList } from "./styles";
 
 export function CoursesPage() {
@@ -16,7 +16,10 @@ export function CoursesPage() {
       </div>
 
       <CoursesList>
-        <CourseItemContainer />
+        <CourseItem />
+        <CourseItem />
+        <CourseItem />
+        <CourseItem />
       </CoursesList>
     </CoursesContainer>
   );
