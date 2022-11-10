@@ -30,9 +30,17 @@ export const AsideBar = styled("aside", {
 
   ".classroom-complete": {
     gridArea: "complete",
+    display: "flex",
+    alignItems: "center",
   },
 
   ".classroom-type": {
+    border: "2px solid $green500",
+    color: "$green500",
+    borderRadius: "4px",
+    display: "flex",
+    justifyContent: "center",
+    alignItems: "center",
     gridArea: "type",
   },
 

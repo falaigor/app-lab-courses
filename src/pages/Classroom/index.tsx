@@ -1,4 +1,5 @@
 import { Footer } from "@/components/Footer";
+import { CheckCircle } from "phosphor-react";
 import {
   AsideBar,
   ClassroomContainer,
@@ -29,7 +30,10 @@ export function ClassroomPage() {
 
         <ul>
           <li>
-            <span className="classroom-complete">Conteudo liberado</span>
+            <span className="classroom-complete">
+              <CheckCircle size={22} />
+              Conteudo liberado
+            </span>
             <span className="classroom-type">Aula Pratica</span>
             <span className="classroom-title">
               Aula 01 - Criando o projeto e realizando o setup inicial
