@@ -1,6 +1,11 @@
 import { createStitches } from "@stitches/react";
 
 export const { styled, getCssText, globalCss } = createStitches({
+  media: {
+    sm: "(min-width: 640px)",
+    md: "(min-width: 768px)",
+    lg: "(min-width: 1024px)",
+  },
   theme: {
     colors: {
       white: "#fff",
@@ -19,11 +24,6 @@ export const { styled, getCssText, globalCss } = createStitches({
       blue300: "#81D8F7",
       red500: "#F75A68",
       yellow800: "#FBA94C",
-    },
-    media: {
-      sm: "(min-width: 640px)",
-      md: "(min-width: 768px)",
-      lg: "(min-width: 1024px)",
     },
   },
 });

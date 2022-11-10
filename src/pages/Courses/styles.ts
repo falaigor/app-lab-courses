@@ -29,7 +29,15 @@ export const CoursesContainer = styled("section", {
 
 export const CoursesList = styled("div", {
   display: "grid",
-  gridTemplateColumns: "repeat(3, 1fr)",
+  gridTemplateColumns: "1fr",
+
+  "@md": {
+    gridTemplateColumns: "repeat(3, 1fr)",
+  },
 });
 
-export const CourseItem = styled("div", {});
+export const CourseItem = styled("div", {
+  backgroundColor: "$blue300",
+  height: "20px",
+  margin: "1rem",
+});
