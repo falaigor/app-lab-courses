@@ -1,6 +1,6 @@
 import { AsideBar } from "./components/AsideBar";
 import { Author } from "./components/Author";
-import { ComplementaryMaterial } from "./components/ComplementaryMaterial/index";
+import { ComplementaryMaterial } from "./components/ComplementaryMaterial";
 import {
   ClassroomContainer,
   ClassroomWrapper,
