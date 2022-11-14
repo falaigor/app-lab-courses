@@ -1,12 +1,12 @@
-import { ReactNode } from "react";
+import { ButtonHTMLAttributes, ReactNode } from "react";
 import { styled } from "../../styles";
 
-interface ButtonProps {
+interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
 }
 
-export const Button = ({ children }: ButtonProps) => {
-  return <ButtonStyle>{children}</ButtonStyle>;
+export const Button = ({ children, ...rest }: ButtonProps) => {
+  return <ButtonStyle {...rest}>{children}</ButtonStyle>;
 };
 
 const ButtonStyle = styled("button", {

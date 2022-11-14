@@ -1,16 +1,43 @@
 import { Button } from "@/components/Button";
-import { Input } from "@/components/Input";
+import { api } from "@/services/api";
+import { useState } from "react";
+import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
 import { FormContainer } from "./styles";
 
+interface SubmitLoginProps {
+  email: string;
+  password: string;
+}
+
 export const Form = () => {
+  const { register, handleSubmit } = useForm<SubmitLoginProps>();
+  const [data, setData] = useState();
+  const navigate = useNavigate();
+
+  async function handleSubmitLogin(data: SubmitLoginProps) {
+    try {
+      const response = await api.post("/auth/session", data);
+      setData(response.data);
+
+      navigate("/courses");
+    } catch (e) {
+      console.log(e);
+    }
+  }
+
   return (
-    <FormContainer>
+    <FormContainer onSubmit={handleSubmit(handleSubmitLogin)}>
       <h2>Faça seu login na plataforma</h2>
 
-      <Input type="email" placeholder="Seu email" />
-      <Input type="password" placeholder="Sua senha" />
+      <input type="email" placeholder="Seu email" {...register("email")} />
+      <input
+        type="password"
+        placeholder="Sua senha"
+        {...register("password")}
+      />
 
-      <Button>Entrar</Button>
+      <Button type="submit">Entrar</Button>
     </FormContainer>
   );
 };
