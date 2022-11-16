@@ -1,5 +1,5 @@
 import { HeaderContainer, HeaderWrapper } from "./styles";
-import { MenuAccount } from "./MenuAccount";
+import { MenuAccount } from "./components/MenuAccount";
 
 export const Header = () => {
   return (
