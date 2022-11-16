@@ -1,7 +1,23 @@
-import { Form } from "./components/Form";
+import { FormProvider, useForm } from "react-hook-form";
+import { LoginForm } from "./components/LoginForm";
 import { HomePageContainer, HomeHero, HomeWrapper, HeroInfo } from "./styles";
+import { useContext } from "react";
+import { LabCourseContext } from "../../context/LabCourseContext";
+
+interface SubmitLoginProps {
+  email: string;
+  password: string;
+}
 
 export function HomePage() {
+  const { signIn, error } = useContext(LabCourseContext);
+  const loginForm = useForm<SubmitLoginProps>();
+  const { handleSubmit } = loginForm;
+
+  function handSubmitSignIn(data: SubmitLoginProps) {
+    signIn(data);
+  }
+
   return (
     <HomePageContainer>
       <HomeWrapper>
@@ -19,7 +35,12 @@ export function HomePage() {
             </p>
           </HeroInfo>
 
-          <Form />
+          <form onSubmit={handleSubmit(handSubmitSignIn)}>
+            <FormProvider {...loginForm}>
+              <LoginForm />
+              {error}
+            </FormProvider>
+          </form>
         </HomeHero>
 
         <img src="/background.png" alt="" />

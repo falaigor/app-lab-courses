@@ -7,10 +7,10 @@ export function App() {
   globalStyles();
 
   return (
-    <LabCourseContextProvider>
-      <BrowserRouter>
+    <BrowserRouter>
+      <LabCourseContextProvider>
         <AppRouter />
-      </BrowserRouter>
-    </LabCourseContextProvider>
+      </LabCourseContextProvider>
+    </BrowserRouter>
   );
 }

@@ -1,7 +1,15 @@
 import { api } from "@/services/api";
 import { saveAccessToken } from "@/actions/application";
 import { applicationReducer } from "@/reducers/application";
-import { ReactNode, createContext, useReducer, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import {
+  ReactNode,
+  createContext,
+  useReducer,
+  useEffect,
+  useState,
+} from "react";
+import { AppRoutes } from "@/router/routes";
 
 interface UserLogin {
   email: string;
@@ -20,6 +28,7 @@ interface LabCourseContextData {
   token: string;
   currentUser: User | null;
   signIn: (data: UserLogin) => void;
+  error: any;
 }
 
 export const LabCourseContext = createContext({} as LabCourseContextData);
@@ -37,6 +46,8 @@ export function LabCourseContextProvider({
   children,
 }: LabCourseContextProviderProps) {
   const localStorageName = "@ignite-lab-course:storage";
+  const navigate = useNavigate();
+  const [error, setError] = useState("");
   const [applicationState, dispatch] = useReducer(
     applicationReducer,
     {
@@ -68,13 +79,18 @@ export function LabCourseContextProvider({
       const { access_token } = response.data;
 
       dispatch(saveAccessToken(access_token));
-    } catch (e) {
-      console.log(e);
+      navigate(AppRoutes.Courses);
+    } catch (err: any) {
+      if (err.response.status === 401) {
+        setError("E-mail/Senha invalálidos");
+      }
+
+      setError("Erro interno");
     }
   }
 
   return (
-    <LabCourseContext.Provider value={{ token, currentUser, signIn }}>
+    <LabCourseContext.Provider value={{ token, currentUser, signIn, error }}>
       {children}
     </LabCourseContext.Provider>
   );

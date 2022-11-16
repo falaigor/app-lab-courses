@@ -22,7 +22,7 @@ export const HomeWrapper = styled("div", {
 export const HomeHero = styled("div", {
   display: "flex",
   justifyContent: "space-between",
-  margin: "5rem 0 0 0 ",
+  margin: "5rem 0 0 0",
   padding: "2rem",
 });
 
