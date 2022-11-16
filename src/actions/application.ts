@@ -1,5 +1,6 @@
 export enum ActionTypes {
   SAVE_ACCESS_TOKEN = "SAVE_ACCESS_TOKEN",
+  DESTROY_SESSION = "DESTROY_SESSION",
 }
 
 export function saveAccessToken(token: string) {
@@ -8,5 +9,11 @@ export function saveAccessToken(token: string) {
     payload: {
       token,
     },
+  };
+}
+
+export function destroySession() {
+  return {
+    type: ActionTypes.DESTROY_SESSION,
   };
 }

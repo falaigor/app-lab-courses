@@ -1,5 +1,5 @@
 import { api } from "@/services/api";
-import { saveAccessToken } from "@/actions/application";
+import { saveAccessToken, destroySession } from "@/actions/application";
 import { applicationReducer } from "@/reducers/application";
 import { useNavigate } from "react-router-dom";
 import {
@@ -28,6 +28,7 @@ interface LabCourseContextData {
   token: string;
   currentUser: User | null;
   signIn: (data: UserLogin) => void;
+  signOut: () => void;
   error: any;
 }
 
@@ -85,12 +86,19 @@ export function LabCourseContextProvider({
         setError("E-mail/Senha invalálidos");
       }
 
-      setError("Erro interno");
+      console.log(err);
     }
   }
 
+  function signOut() {
+    localStorage.removeItem(localStorageName);
+    dispatch(destroySession());
+  }
+
   return (
-    <LabCourseContext.Provider value={{ token, currentUser, signIn, error }}>
+    <LabCourseContext.Provider
+      value={{ token, currentUser, signIn, signOut, error }}
+    >
       {children}
     </LabCourseContext.Provider>
   );

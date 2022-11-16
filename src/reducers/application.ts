@@ -21,6 +21,9 @@ export function applicationReducer(state: LabCourseState, action: any) {
         draft.token = action.payload;
       });
 
+    case ActionTypes.DESTROY_SESSION:
+      return state;
+
     default:
       return state;
   }
