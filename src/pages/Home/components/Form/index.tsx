@@ -1,9 +1,10 @@
 import { Button } from "@/components/Button";
 import { api } from "@/services/api";
-import { useState } from "react";
+import { useContext, useState } from "react";
 import { useForm } from "react-hook-form";
 import { useNavigate } from "react-router-dom";
 import { FormContainer } from "./styles";
+import { LabCourseContext } from "../../../../context/LabCourseContext";
 
 interface SubmitLoginProps {
   email: string;
@@ -12,6 +13,7 @@ interface SubmitLoginProps {
 
 export const Form = () => {
   const { register, handleSubmit } = useForm<SubmitLoginProps>();
+  const { signIn } = useContext(LabCourseContext);
   const [data, setData] = useState();
   const navigate = useNavigate();
 

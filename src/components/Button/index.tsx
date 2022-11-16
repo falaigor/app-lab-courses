@@ -3,10 +3,15 @@ import { styled } from "../../styles";
 
 interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   children: ReactNode;
+  onClick: () => void;
 }
 
-export const Button = ({ children, ...rest }: ButtonProps) => {
-  return <ButtonStyle {...rest}>{children}</ButtonStyle>;
+export const Button = ({ children, onClick, ...rest }: ButtonProps) => {
+  return (
+    <ButtonStyle onClick={onClick} {...rest}>
+      {children}
+    </ButtonStyle>
+  );
 };
 
 const ButtonStyle = styled("button", {
