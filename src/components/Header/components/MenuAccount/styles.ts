@@ -21,7 +21,7 @@ const slideLeftAndFade = keyframes({
   "100%": { opacity: 1, transform: "translateX(0)" },
 });
 
-export const AccountContainer = styled("div", {
+export const AccountContainer = styled("nav", {
   display: "flex",
   alignItems: "center",
 

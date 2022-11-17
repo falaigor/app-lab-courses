@@ -1,7 +1,39 @@
+import { api } from "@/services/api";
+import { useEffect, useState, useContext } from "react";
 import { CourseItem } from "./components/CourseItem";
 import { CoursesContainer, CoursesList } from "./styles";
+import { LabCourseContext } from "../../context/LabCourseContext";
+
+interface CoursesProps {
+  id: string;
+  authorId: string;
+  cover: string;
+  name: string;
+  description: string;
+  slug: string;
+  status: string;
+}
 
 export function CoursesPage() {
+  const { token } = useContext(LabCourseContext);
+  const [courses, setCourses] = useState<CoursesProps[]>([]);
+
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await api.get("/courses", {
+        headers: { Authorization: "Bearer " + token },
+      });
+
+      setCourses(response.data);
+    };
+
+    try {
+      fetchData();
+    } catch (err) {
+      console.log(err);
+    }
+  }, []);
+
   return (
     <CoursesContainer>
       <div className="description">
@@ -16,10 +48,9 @@ export function CoursesPage() {
       </div>
 
       <CoursesList>
-        <CourseItem />
-        <CourseItem />
-        <CourseItem />
-        <CourseItem />
+        {courses.map((course) => {
+          return <CourseItem />;
+        })}
       </CoursesList>
     </CoursesContainer>
   );

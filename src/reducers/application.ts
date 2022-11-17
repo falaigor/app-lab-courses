@@ -18,7 +18,7 @@ export function applicationReducer(state: LabCourseState, action: any) {
   switch (action.type) {
     case ActionTypes.SAVE_ACCESS_TOKEN:
       return produce(state, (draft) => {
-        draft.token = action.payload;
+        draft.token = action.payload.token;
       });
 
     case ActionTypes.DESTROY_SESSION:
