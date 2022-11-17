@@ -1,10 +1,10 @@
 import { api } from "@/services/api";
 import { useEffect, useState, useContext } from "react";
+import { LabCourseContext } from "@/context/LabCourseContext";
 import { CourseItem } from "./components/CourseItem";
 import { CoursesContainer, CoursesList } from "./styles";
-import { LabCourseContext } from "../../context/LabCourseContext";
 
-interface CoursesProps {
+export interface CourseProps {
   id: string;
   authorId: string;
   cover: string;
@@ -16,7 +16,7 @@ interface CoursesProps {
 
 export function CoursesPage() {
   const { token } = useContext(LabCourseContext);
-  const [courses, setCourses] = useState<CoursesProps[]>([]);
+  const [courses, setCourses] = useState<CourseProps[]>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -49,7 +49,7 @@ export function CoursesPage() {
 
       <CoursesList>
         {courses.map((course) => {
-          return <CourseItem />;
+          return <CourseItem {...course} />;
         })}
       </CoursesList>
     </CoursesContainer>

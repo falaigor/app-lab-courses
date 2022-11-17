@@ -1,17 +1,16 @@
 import { CourseItemContainer } from "./styles";
-import { Button } from "@/components/Button";
+import { CourseProps } from "../..";
+import { Link } from "react-router-dom";
 
-export const CourseItem = () => {
+export const CourseItem = (course: CourseProps) => {
   return (
-    <CourseItemContainer>
-      <img src="/cover-item.png" alt="" />
-      <h3>Titulo</h3>
-      <p>
-        Em apenas uma semana você vai dominar na prática uma das tecnologias
-        mais utilizadas e com alta demanda para acessar as melhores
-        oportunidades do mercado.
-      </p>
-      <Button>Acessar Curso</Button>
-    </CourseItemContainer>
+    <>
+      <CourseItemContainer>
+        <img src={course.cover} alt={course.name} />
+        <h3>{course.name}</h3>
+        <p>{course.description}</p>
+        <Link to={course.slug}>Acessar Curso</Link>
+      </CourseItemContainer>
+    </>
   );
 };
